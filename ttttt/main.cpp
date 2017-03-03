@@ -11,6 +11,41 @@
 #include "math.h"
 
 static GLfloat GL_PI = 3.14159f;
+
+void drawLine()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    // 开始画线
+    glColor3f(0.0f, 1.0f, 0.0f);
+    GLfloat lineWidth[2];
+    glGetFloatv(GL_LINE_WIDTH_RANGE, lineWidth);
+    glBegin(GL_LINE);
+    glVertex3f(0,  0,   -100);
+    glVertex3f(50, 50,  -10);
+    glEnd();
+    glutSwapBuffers();
+    
+    
+//    glClear(GL_COLOR_BUFFER_BIT);
+//    
+//    glColor3f(0.0f, 1.0f, 1.0f);
+//    GLfloat x, y, z, angle;
+//    z = -50.0f;
+//    //画线
+//    glBegin(GL_LINES);
+//    for (angle = 0.0f; angle <= 2*GL_PI; angle +=0.5f)
+//    {
+//        x = 50.0f*cos(angle);
+//        y = 50.0f*sin(angle);
+//        //设置两个顶点
+//        glVertex3f(0.0f, 0.0f, 0.0f);
+//        glVertex3f(x, y, z);
+//        z += 0.5f;
+//    }
+//    glEnd();
+//    glutSwapBuffers();
+}
+
 void drawPoint()
 {
     GLfloat z = -50.0f;
@@ -95,14 +130,16 @@ int main(int argc, char * argv[]) {
     // insert code here...
     
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE|GLUT_RGBA);
+    glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA);
     
     
     createWindows(400,400);
+    glClearColor(0.7f, 0.7f, 0.7f, 1.0f);
     glutReshapeFunc(changeSize);
-    glutDisplayFunc(drawPoint);     // 点
+//    glutDisplayFunc(drawPoint);     // 点
+    glutDisplayFunc(drawLine);      // 线
     
-    glClearColor(0.7, 0.7, 0.7, 0.7);
+    
     glutMainLoop();
     
     return 0;
