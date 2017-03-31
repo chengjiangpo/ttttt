@@ -10,9 +10,14 @@
 #include "LHead.h"
 #include "math.h"
 #include <unistd.h>
+#include "triangleShader/triangleShader.h"
+
 static GLfloat GL_PI = 3.14159f;
 static void drawPolygons()
 {
+    triangleShader shader;
+    shader.draw();
+    return;
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 //    glColor3f(1.0f, 1.0f, 0.0f);
     // 开启深度测试
@@ -147,13 +152,14 @@ int main(int argc, char * argv[]) {
     glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA);
     
     
-    createWindows(600,600);
+    createWindows(WINWIDTH,WINHIGH);
     glutReshapeFunc(changeSize);
     glutDisplayFunc(drawPolygons);
     
 //    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    glClearColor(0.7f,0.7f, 0.7f, 0.7f);
+//    glClearColor(0.7f,0.7f, 0.7f, 0.7f);
     glutMainLoop();
     
     return 0;
 }
+

@@ -12,7 +12,26 @@
 		43CABA191E6943CF0098A68B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CABA181E6943CF0098A68B /* OpenGL.framework */; };
 		43CABA1B1E6943D50098A68B /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CABA1A1E6943D50098A68B /* GLUT.framework */; };
 		43CABA211E6943EF0098A68B /* LHead.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43CABA1E1E6943EF0098A68B /* LHead.cpp */; };
+		F2BEFD6F1E894EC700953D12 /* triangleShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2BEFD6D1E894EC700953D12 /* triangleShader.cpp */; };
+		F2BF31381E8561CC00867F3D /* firstGPUProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2BF31361E8561CC00867F3D /* firstGPUProgram.cpp */; };
+		F2BFC08F1E876BBE00AA41AD /* firstShaderTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2BFC08D1E876BBE00AA41AD /* firstShaderTest.cpp */; };
+		F2C22A321E8670E0000495C2 /* firstShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2C22A301E8670E0000495C2 /* firstShader.cpp */; };
+		F2C22A4B1E868453000495C2 /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C22A4A1E868453000495C2 /* libGLEW.2.0.0.dylib */; };
+		F2C22A4D1E868457000495C2 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C22A4C1E868457000495C2 /* libGLEW.a */; };
+		F2C22A4F1E8689FC000495C2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C22A4E1E8689FC000495C2 /* libglfw3.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		F2BEFD621E89467000953D12 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = file.bplist;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyPlist\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		43CABA091E6943B20098A68B /* CopyFiles */ = {
@@ -34,6 +53,20 @@
 		43CABA1A1E6943D50098A68B /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		43CABA1E1E6943EF0098A68B /* LHead.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHead.cpp; sourceTree = "<group>"; };
 		43CABA1F1E6943EF0098A68B /* LHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHead.h; sourceTree = "<group>"; };
+		F2BEFD651E89499200953D12 /* firstFrameShader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = firstFrameShader.txt; sourceTree = "<group>"; };
+		F2BEFD661E89499200953D12 /* firstVertexShader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = firstVertexShader.txt; sourceTree = "<group>"; };
+		F2BEFD6D1E894EC700953D12 /* triangleShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangleShader.cpp; sourceTree = "<group>"; };
+		F2BEFD6E1E894EC700953D12 /* triangleShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangleShader.h; sourceTree = "<group>"; };
+		F2BF31361E8561CC00867F3D /* firstGPUProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = firstGPUProgram.cpp; sourceTree = "<group>"; };
+		F2BF31371E8561CC00867F3D /* firstGPUProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstGPUProgram.h; sourceTree = "<group>"; };
+		F2BF31391E856A3100867F3D /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		F2BFC08D1E876BBE00AA41AD /* firstShaderTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = firstShaderTest.cpp; sourceTree = "<group>"; };
+		F2BFC08E1E876BBE00AA41AD /* firstShaderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstShaderTest.h; sourceTree = "<group>"; };
+		F2C22A301E8670E0000495C2 /* firstShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = firstShader.cpp; sourceTree = "<group>"; };
+		F2C22A311E8670E0000495C2 /* firstShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstShader.h; sourceTree = "<group>"; };
+		F2C22A4A1E868453000495C2 /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../usr/local/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
+		F2C22A4C1E868457000495C2 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../../usr/local/lib/libGLEW.a; sourceTree = "<group>"; };
+		F2C22A4E1E8689FC000495C2 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +77,9 @@
 				43CABA1B1E6943D50098A68B /* GLUT.framework in Frameworks */,
 				43CABA191E6943CF0098A68B /* OpenGL.framework in Frameworks */,
 				43CABA171E6943C70098A68B /* Foundation.framework in Frameworks */,
+				F2C22A4B1E868453000495C2 /* libGLEW.2.0.0.dylib in Frameworks */,
+				F2C22A4D1E868457000495C2 /* libGLEW.a in Frameworks */,
+				F2C22A4F1E8689FC000495C2 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +92,7 @@
 				43CABA0D1E6943B20098A68B /* ttttt */,
 				43CABA0C1E6943B20098A68B /* Products */,
 				43CABA151E6943C70098A68B /* Frameworks */,
+				F2BEFD631E89499200953D12 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,7 +107,12 @@
 		43CABA0D1E6943B20098A68B /* ttttt */ = {
 			isa = PBXGroup;
 			children = (
+				F2BEFD6C1E894EC700953D12 /* triangleShader */,
+				F2BFC08C1E876BBE00AA41AD /* firstShaderTest */,
+				F2C22A2F1E8670CC000495C2 /* firstShader */,
+				F2BF31351E8561CC00867F3D /* firstGPUProgram */,
 				43CABA0E1E6943B20098A68B /* main.cpp */,
+				F2BF31391E856A3100867F3D /* Macro.h */,
 				43CABA1E1E6943EF0098A68B /* LHead.cpp */,
 				43CABA1F1E6943EF0098A68B /* LHead.h */,
 			);
@@ -80,11 +122,67 @@
 		43CABA151E6943C70098A68B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F2C22A4E1E8689FC000495C2 /* libglfw3.a */,
+				F2C22A4C1E868457000495C2 /* libGLEW.a */,
+				F2C22A4A1E868453000495C2 /* libGLEW.2.0.0.dylib */,
 				43CABA1A1E6943D50098A68B /* GLUT.framework */,
 				43CABA181E6943CF0098A68B /* OpenGL.framework */,
 				43CABA161E6943C70098A68B /* Foundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2BEFD631E89499200953D12 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F2BEFD641E89499200953D12 /* Shader */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F2BEFD641E89499200953D12 /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				F2BEFD651E89499200953D12 /* firstFrameShader.txt */,
+				F2BEFD661E89499200953D12 /* firstVertexShader.txt */,
+			);
+			path = Shader;
+			sourceTree = "<group>";
+		};
+		F2BEFD6C1E894EC700953D12 /* triangleShader */ = {
+			isa = PBXGroup;
+			children = (
+				F2BEFD6D1E894EC700953D12 /* triangleShader.cpp */,
+				F2BEFD6E1E894EC700953D12 /* triangleShader.h */,
+			);
+			path = triangleShader;
+			sourceTree = "<group>";
+		};
+		F2BF31351E8561CC00867F3D /* firstGPUProgram */ = {
+			isa = PBXGroup;
+			children = (
+				F2BF31361E8561CC00867F3D /* firstGPUProgram.cpp */,
+				F2BF31371E8561CC00867F3D /* firstGPUProgram.h */,
+			);
+			path = firstGPUProgram;
+			sourceTree = "<group>";
+		};
+		F2BFC08C1E876BBE00AA41AD /* firstShaderTest */ = {
+			isa = PBXGroup;
+			children = (
+				F2BFC08D1E876BBE00AA41AD /* firstShaderTest.cpp */,
+				F2BFC08E1E876BBE00AA41AD /* firstShaderTest.h */,
+			);
+			path = firstShaderTest;
+			sourceTree = "<group>";
+		};
+		F2C22A2F1E8670CC000495C2 /* firstShader */ = {
+			isa = PBXGroup;
+			children = (
+				F2C22A301E8670E0000495C2 /* firstShader.cpp */,
+				F2C22A311E8670E0000495C2 /* firstShader.h */,
+			);
+			path = firstShader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +197,7 @@
 				43CABA091E6943B20098A68B /* CopyFiles */,
 			);
 			buildRules = (
+				F2BEFD621E89467000953D12 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -146,6 +245,10 @@
 			files = (
 				43CABA211E6943EF0098A68B /* LHead.cpp in Sources */,
 				43CABA0F1E6943B20098A68B /* main.cpp in Sources */,
+				F2BFC08F1E876BBE00AA41AD /* firstShaderTest.cpp in Sources */,
+				F2BF31381E8561CC00867F3D /* firstGPUProgram.cpp in Sources */,
+				F2BEFD6F1E894EC700953D12 /* triangleShader.cpp in Sources */,
+				F2C22A321E8670E0000495C2 /* firstShader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +345,13 @@
 		43CABA131E6943B20098A68B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -250,6 +360,13 @@
 		43CABA141E6943B20098A68B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

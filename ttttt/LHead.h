@@ -10,14 +10,59 @@
 #define LHead_h
 
 #include <iostream>
+#include <GL/glew.h>
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 #include <GLUT/glut.h>
+#include <glm/glm.hpp>
+#include <glm/ext.hpp>
+#include "Macro.h"
+#include <string>
 
 using namespace std;
 
-#define LOG(_info) std::cout<<"opengl log:"<< _info<<std::endl;
 
-#define LOG_FUNCNAME LOG(__func__)
+const GLfloat identityMatrix[] =
+{
+    1.0f,0.0f,0.0f,0.0f,
+    0.0f,1.0f,0.0f,0.0f,
+    0.0f,0.0f,1.0f,0.0f,
+    0.0f,0.0f,0.0f,1.0f
+};
+
+const glm::mat4 protectionMatrix = glm::perspective(90.0f, WINWIDTH/WINHIGH, 0.1f, 1000.0f);
+
+struct Vertex
+{
+    GLfloat x;
+    GLfloat y;
+    GLfloat z;
+};
+
+struct Color
+{
+    GLfloat r;
+    GLfloat g;
+    GLfloat b;
+    GLfloat a;
+};
+
+struct VertexColor
+{
+    Vertex vex;
+    Color color;
+};
+
+
+extern struct Vertex makeVertex(GLfloat x, GLfloat y, GLfloat z);
+
+extern struct Color makeColor(GLfloat r,GLfloat g,GLfloat b,GLfloat a);
+
+extern struct VertexColor makeVertexColor(struct Vertex vex,struct Color color);
+
+
+char* getFileData(const char* filePath);
+string getFullPath(string releavePath);
+
 
 #endif /* LHead_h */
