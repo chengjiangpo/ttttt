@@ -18,6 +18,7 @@
 #include <glm/ext.hpp>
 #include "Macro.h"
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -53,6 +54,31 @@ struct VertexColor
     Color color;
 };
 
+struct TexCooor
+{
+    float texCoor[2];
+};
+
+struct Normal
+{
+    float normal[3];
+};
+
+struct VertexIndex
+{
+    GLint positionIndex;
+    GLint texcoorIndex;
+    GLint nomalIndex;
+};
+
+struct VertexInfo
+{
+    struct Vertex       vertex;
+    struct Color        color;
+    struct TexCooor     texCoor;
+    struct Normal       normal;
+};
+
 
 extern struct Vertex makeVertex(GLfloat x, GLfloat y, GLfloat z);
 
@@ -60,9 +86,24 @@ extern struct Color makeColor(GLfloat r,GLfloat g,GLfloat b,GLfloat a);
 
 extern struct VertexColor makeVertexColor(struct Vertex vex,struct Color color);
 
+extern struct TexCooor makeTexCoor(GLfloat first,GLfloat second);
+
+extern struct Normal makeNormal(GLfloat x,GLfloat y,GLfloat z);
+
+extern struct VertexIndex makeVertexIndex(GLint posIndex,GLint texCoorIndex, GLint normalIndex);
+extern struct VertexInfo makeVertexInfo(Vertex vertex,Color color,TexCooor texcoor, Normal normal);
+
 
 char* getFileData(const char* filePath);
 string getFullPath(string releavePath);
 
+
+vector<string> splitString(string string,char split);
+
+vector<int>    splitStringToNum(string splitString,char split);
+
+
+
+bool checkShaderError(GLint shader);
 
 #endif /* LHead_h */

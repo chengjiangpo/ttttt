@@ -128,8 +128,8 @@ void triangleShader::setShaderInfo(GLint program,GLuint vbo,GLuint ibo)
     glEnableVertexAttribArray(posLocation);
     glVertexAttribPointer(posLocation,3,GL_FLOAT,GL_FALSE,sizeof(VertexColor),(void*)0);
     
-    glEnableVertexAttribArray(colorLocation);
-    glVertexAttribPointer(colorLocation,4,GL_FLOAT,GL_FALSE,sizeof(VertexColor),(void*)(sizeof(GLfloat)*3));
+//    glEnableVertexAttribArray(colorLocation);
+//    glVertexAttribPointer(colorLocation,4,GL_FLOAT,GL_FALSE,sizeof(VertexColor),(void*)(sizeof(GLfloat)*3));
     
     
     glBindBuffer(GL_ARRAY_BUFFER, 0);

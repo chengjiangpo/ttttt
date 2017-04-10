@@ -12,6 +12,8 @@
 		43CABA191E6943CF0098A68B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CABA181E6943CF0098A68B /* OpenGL.framework */; };
 		43CABA1B1E6943D50098A68B /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CABA1A1E6943D50098A68B /* GLUT.framework */; };
 		43CABA211E6943EF0098A68B /* LHead.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43CABA1E1E6943EF0098A68B /* LHead.cpp */; };
+		F2BE5FF81E8F2EB00090A0E3 /* first3DModelProject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2BE5FF61E8F2EB00090A0E3 /* first3DModelProject.cpp */; };
+		F2BE89421E9924F1006DEB8B /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2BE89401E9924F1006DEB8B /* texture.cpp */; };
 		F2BEFD6F1E894EC700953D12 /* triangleShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2BEFD6D1E894EC700953D12 /* triangleShader.cpp */; };
 		F2BF31381E8561CC00867F3D /* firstGPUProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2BF31361E8561CC00867F3D /* firstGPUProgram.cpp */; };
 		F2BFC08F1E876BBE00AA41AD /* firstShaderTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2BFC08D1E876BBE00AA41AD /* firstShaderTest.cpp */; };
@@ -19,6 +21,7 @@
 		F2C22A4B1E868453000495C2 /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C22A4A1E868453000495C2 /* libGLEW.2.0.0.dylib */; };
 		F2C22A4D1E868457000495C2 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C22A4C1E868457000495C2 /* libGLEW.a */; };
 		F2C22A4F1E8689FC000495C2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C22A4E1E8689FC000495C2 /* libglfw3.a */; };
+		F2C3A1071E8DD68C00266E47 /* load3DModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2C3A1051E8DD68C00266E47 /* load3DModel.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -53,6 +56,14 @@
 		43CABA1A1E6943D50098A68B /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		43CABA1E1E6943EF0098A68B /* LHead.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHead.cpp; sourceTree = "<group>"; };
 		43CABA1F1E6943EF0098A68B /* LHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHead.h; sourceTree = "<group>"; };
+		F2BA65071E97DE88004CA011 /* ambient.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ambient.fs; sourceTree = "<group>"; };
+		F2BA65081E97DE88004CA011 /* ambient.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ambient.vs; sourceTree = "<group>"; };
+		F2BA65091E97E3BE004CA011 /* diffuse.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = diffuse.fs; sourceTree = "<group>"; };
+		F2BA650A1E97E3BE004CA011 /* diffuse.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = diffuse.vs; sourceTree = "<group>"; };
+		F2BE5FF61E8F2EB00090A0E3 /* first3DModelProject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = first3DModelProject.cpp; sourceTree = "<group>"; };
+		F2BE5FF71E8F2EB00090A0E3 /* first3DModelProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = first3DModelProject.h; sourceTree = "<group>"; };
+		F2BE89401E9924F1006DEB8B /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
+		F2BE89411E9924F1006DEB8B /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
 		F2BEFD651E89499200953D12 /* firstFrameShader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = firstFrameShader.txt; sourceTree = "<group>"; };
 		F2BEFD661E89499200953D12 /* firstVertexShader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = firstVertexShader.txt; sourceTree = "<group>"; };
 		F2BEFD6D1E894EC700953D12 /* triangleShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangleShader.cpp; sourceTree = "<group>"; };
@@ -62,11 +73,22 @@
 		F2BF31391E856A3100867F3D /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		F2BFC08D1E876BBE00AA41AD /* firstShaderTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = firstShaderTest.cpp; sourceTree = "<group>"; };
 		F2BFC08E1E876BBE00AA41AD /* firstShaderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstShaderTest.h; sourceTree = "<group>"; };
+		F2C088A71E986B9600A16E65 /* texcoord.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texcoord.fs; sourceTree = "<group>"; };
+		F2C088A81E986B9600A16E65 /* texcoord.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texcoord.vs; sourceTree = "<group>"; };
 		F2C22A301E8670E0000495C2 /* firstShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = firstShader.cpp; sourceTree = "<group>"; };
 		F2C22A311E8670E0000495C2 /* firstShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstShader.h; sourceTree = "<group>"; };
 		F2C22A4A1E868453000495C2 /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../usr/local/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
 		F2C22A4C1E868457000495C2 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../../usr/local/lib/libGLEW.a; sourceTree = "<group>"; };
 		F2C22A4E1E8689FC000495C2 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
+		F2C3A1051E8DD68C00266E47 /* load3DModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = load3DModel.cpp; sourceTree = "<group>"; };
+		F2C3A1061E8DD68C00266E47 /* load3DModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = load3DModel.h; sourceTree = "<group>"; };
+		F2C847221E952ADD00FD8068 /* 150001.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = 150001.dds; sourceTree = "<group>"; };
+		F2C847231E952ADD00FD8068 /* camera.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = camera.dds; sourceTree = "<group>"; };
+		F2C847241E952ADD00FD8068 /* niutou.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = niutou.bmp; sourceTree = "<group>"; };
+		F2C847261E952ADD00FD8068 /* Cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cube.obj; sourceTree = "<group>"; };
+		F2C847271E952ADD00FD8068 /* niutou.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = niutou.obj; sourceTree = "<group>"; };
+		F2C847281E952ADD00FD8068 /* Quad.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Quad.obj; sourceTree = "<group>"; };
+		F2C847291E952ADD00FD8068 /* Sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sphere.obj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +129,9 @@
 		43CABA0D1E6943B20098A68B /* ttttt */ = {
 			isa = PBXGroup;
 			children = (
+				F2BE893F1E9924F1006DEB8B /* texture */,
+				F2BE5FF51E8F2E980090A0E3 /* first3DModelProject */,
+				F2C3A1041E8DD68C00266E47 /* load3DModel */,
 				F2BEFD6C1E894EC700953D12 /* triangleShader */,
 				F2BFC08C1E876BBE00AA41AD /* firstShaderTest */,
 				F2C22A2F1E8670CC000495C2 /* firstShader */,
@@ -132,9 +157,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F2BE5FF51E8F2E980090A0E3 /* first3DModelProject */ = {
+			isa = PBXGroup;
+			children = (
+				F2BE5FF61E8F2EB00090A0E3 /* first3DModelProject.cpp */,
+				F2BE5FF71E8F2EB00090A0E3 /* first3DModelProject.h */,
+			);
+			path = first3DModelProject;
+			sourceTree = "<group>";
+		};
+		F2BE893F1E9924F1006DEB8B /* texture */ = {
+			isa = PBXGroup;
+			children = (
+				F2BE89401E9924F1006DEB8B /* texture.cpp */,
+				F2BE89411E9924F1006DEB8B /* texture.h */,
+			);
+			path = texture;
+			sourceTree = "<group>";
+		};
 		F2BEFD631E89499200953D12 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F2C847211E952ADD00FD8068 /* image */,
+				F2C847251E952ADD00FD8068 /* model */,
 				F2BEFD641E89499200953D12 /* Shader */,
 			);
 			path = Resources;
@@ -143,6 +188,12 @@
 		F2BEFD641E89499200953D12 /* Shader */ = {
 			isa = PBXGroup;
 			children = (
+				F2C088A71E986B9600A16E65 /* texcoord.fs */,
+				F2C088A81E986B9600A16E65 /* texcoord.vs */,
+				F2BA65091E97E3BE004CA011 /* diffuse.fs */,
+				F2BA650A1E97E3BE004CA011 /* diffuse.vs */,
+				F2BA65071E97DE88004CA011 /* ambient.fs */,
+				F2BA65081E97DE88004CA011 /* ambient.vs */,
 				F2BEFD651E89499200953D12 /* firstFrameShader.txt */,
 				F2BEFD661E89499200953D12 /* firstVertexShader.txt */,
 			);
@@ -183,6 +234,36 @@
 				F2C22A311E8670E0000495C2 /* firstShader.h */,
 			);
 			path = firstShader;
+			sourceTree = "<group>";
+		};
+		F2C3A1041E8DD68C00266E47 /* load3DModel */ = {
+			isa = PBXGroup;
+			children = (
+				F2C3A1051E8DD68C00266E47 /* load3DModel.cpp */,
+				F2C3A1061E8DD68C00266E47 /* load3DModel.h */,
+			);
+			path = load3DModel;
+			sourceTree = "<group>";
+		};
+		F2C847211E952ADD00FD8068 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				F2C847221E952ADD00FD8068 /* 150001.dds */,
+				F2C847231E952ADD00FD8068 /* camera.dds */,
+				F2C847241E952ADD00FD8068 /* niutou.bmp */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		F2C847251E952ADD00FD8068 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F2C847261E952ADD00FD8068 /* Cube.obj */,
+				F2C847271E952ADD00FD8068 /* niutou.obj */,
+				F2C847281E952ADD00FD8068 /* Quad.obj */,
+				F2C847291E952ADD00FD8068 /* Sphere.obj */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,12 +324,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C3A1071E8DD68C00266E47 /* load3DModel.cpp in Sources */,
 				43CABA211E6943EF0098A68B /* LHead.cpp in Sources */,
 				43CABA0F1E6943B20098A68B /* main.cpp in Sources */,
+				F2BE89421E9924F1006DEB8B /* texture.cpp in Sources */,
 				F2BFC08F1E876BBE00AA41AD /* firstShaderTest.cpp in Sources */,
 				F2BF31381E8561CC00867F3D /* firstGPUProgram.cpp in Sources */,
 				F2BEFD6F1E894EC700953D12 /* triangleShader.cpp in Sources */,
 				F2C22A321E8670E0000495C2 /* firstShader.cpp in Sources */,
+				F2BE5FF81E8F2EB00090A0E3 /* first3DModelProject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

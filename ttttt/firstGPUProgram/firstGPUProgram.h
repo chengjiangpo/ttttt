@@ -20,6 +20,7 @@ public:
     
 public:
     
+    void newDraw();
     void draw();
     
     void initOpenGl();
