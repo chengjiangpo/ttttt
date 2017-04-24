@@ -94,15 +94,14 @@ void load3DModel::loadModel(string modelName,vector<VertexInfo>& vertexInfoVec,v
     {
         int findIndex = -1;
         VertexIndex indexA = vertexIndexVec.at(i);
-        for (size_t j = 0; j < indexVec.size() ;j++)
+        for (size_t j = 0; j < i ;j++)
         {
-            int index = (int)indexVec.at(j);
-            VertexIndex indexB = vertexIndexVec.at(index);
+            VertexIndex indexB = vertexIndexVec.at(j);
             if (indexA.positionIndex == indexB.positionIndex
                 && indexA.texcoorIndex == indexB.texcoorIndex
                 && indexA.nomalIndex == indexB.nomalIndex)
             {
-                findIndex = index;
+                findIndex = indexVec.at(j);
                 break;
             }
         }
