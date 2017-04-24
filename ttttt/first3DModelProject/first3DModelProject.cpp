@@ -37,9 +37,9 @@ void first3DModelProject::init()
 
 void first3DModelProject::draw()
 {
-    m_program = createProject("Shader/texcoord.vs", "Shader/texcoord.fs");
-    loadModel("model/Cube.obj");
-    createTexCoord("image/earth.bmp");
+    m_program = createProject("Shader/diffuse.vs", "Shader/diffuse.fs");
+    loadModel("model/niutou.obj");
+    createTexCoord("image/niutou.bmp");
     
     glUseProgram(m_program);
     
@@ -58,9 +58,9 @@ void first3DModelProject::draw()
     
     
     glm::mat4 model = glm::mat4(1.0f);
-    model = glm::translate(model,glm::vec3(0.0f,0.0f,-1.5f));
-//    model = glm::scale(model, glm::vec3(1.5,1.3,1.3));
-    model = glm::rotate(model, 180.0f, glm::vec3(0.0,1.0,0.0));
+    model = glm::translate(model,glm::vec3(0.0f,0.0f,-100.0f));
+//    model = glm::scale(model, glm::vec3(1.3,1.3,1.3));
+//    model = glm::rotate(model, 180.0f, glm::vec3(0.0,1.0,0.0));
     glm::mat4 normalMatrix = glm::inverseTranspose(model);
     // 设置矩阵信息
     glUniformMatrix4fv(MLocation,1,GL_FALSE,glm::value_ptr(model));

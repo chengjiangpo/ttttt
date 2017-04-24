@@ -89,7 +89,6 @@ void load3DModel::loadModel(string modelName,vector<VertexInfo>& vertexInfoVec,v
     load3DModel load;
     load.readModel(modelName, vertexVec, texcoorVec, normalVec, vertexIndexVec);
     
-    
     // 开始处理读取出来的模型的数据
     for (size_t i = 0; i < vertexIndexVec.size(); i++)
     {
@@ -97,17 +96,19 @@ void load3DModel::loadModel(string modelName,vector<VertexInfo>& vertexInfoVec,v
         VertexIndex indexA = vertexIndexVec.at(i);
         for (size_t j = 0; j < indexVec.size() ;j++)
         {
-            VertexIndex indexB = vertexIndexVec.at(indexVec.at(j));
+            int index = (int)indexVec.at(j);
+            VertexIndex indexB = vertexIndexVec.at(index);
             if (indexA.positionIndex == indexB.positionIndex
                 && indexA.texcoorIndex == indexB.texcoorIndex
                 && indexA.nomalIndex == indexB.nomalIndex)
             {
-                findIndex = (int)j;
+                findIndex = index;
                 break;
             }
         }
         if (findIndex >= 0 )
         {
+            printf("找到相同节点：当前节点：%d, 相同节点：%d\n",i,findIndex);
             indexVec.push_back(findIndex);
         }else
         {
@@ -122,7 +123,7 @@ void load3DModel::loadModel(string modelName,vector<VertexInfo>& vertexInfoVec,v
 void load3DModel::loadModel(string name,VertexInfo* &pInfo,int& vertexNum,int* &pIndex,int& indexNum)
 {
     vector<VertexInfo>  vecInfo;
-    vector<int> vecIndex;
+    vector<int>         vecIndex;
     
     loadModel(name, vecInfo, vecIndex);
     
@@ -133,11 +134,11 @@ void load3DModel::loadModel(string name,VertexInfo* &pInfo,int& vertexNum,int* &
     pIndex  = new int[indexSize];
     
     for (int i = 0; i < infoSize; i++) {
-        *(pInfo) = vecInfo.at(i);
+        *(pInfo+i) = vecInfo.at(i);
     }
     
     for (int j = 0; j < indexSize; j++) {
-        *(pIndex) = vecIndex.at(j);
+        *(pIndex+j) = vecIndex.at(j);
     }
     
     vertexNum = infoSize;

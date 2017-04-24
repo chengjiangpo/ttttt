@@ -94,6 +94,7 @@ extern struct VertexIndex makeVertexIndex(GLint posIndex,GLint texCoorIndex, GLi
 extern struct VertexInfo makeVertexInfo(Vertex vertex,Color color,TexCooor texcoor, Normal normal);
 
 
+
 char* getFileData(const char* filePath);
 string getFullPath(string releavePath);
 

@@ -10,7 +10,7 @@
 #include "LHead.h"
 #include "math.h"
 #include <unistd.h>
-//#include "first3DModelProject/first3DModelProject.h"
+#include "first3DModelProject/first3DModelProject.h"
 //#include "triangleShader.h"ex
 #include "texture.h"
 

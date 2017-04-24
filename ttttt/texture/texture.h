@@ -10,6 +10,7 @@
 #define __ttttt__texture__
 
 #include "LHead.h"
+#include "model.h"
 
 class texture
 {
@@ -21,6 +22,9 @@ private:
     
     int    m_indexNum;
     
+    Model*  m_pModel ;
+    
+    
 public:
     texture();
     ~texture();
@@ -30,11 +34,12 @@ public:
 
 private:
     void init();
-    void initProgram();
-    void initModel();
-    void initVBOAndIBO(VertexInfo* pInfo,int vertexNum,int* pIndex,int indexNum);
-    void initTexture();
-    void initMatrix();
+    GLint createProgram(string vsPath,string fsPath);
+    
+    void createVBOAndIBO(string modelName);
+    
+    void createTexture(string texName);
+    
 
 };
 
