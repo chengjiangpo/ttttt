@@ -21,15 +21,15 @@ Model::Model()
 
 Model::~Model()
 {
-//    if (m_pIndex)
-//    {
-//        delete [] m_pInfo;
-//    }
-//    
-//    if (m_pIndex)
-//    {
-//        delete [] m_pIndex;
-//    }
+    if (m_pIndex)
+    {
+        delete [] m_pInfo;
+    }
+    
+    if (m_pIndex)
+    {
+        delete [] m_pIndex;
+    }
 }
 
 void Model::load(string modelName)

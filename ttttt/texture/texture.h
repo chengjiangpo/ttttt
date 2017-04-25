@@ -30,10 +30,11 @@ public:
     ~texture();
     
 public:
-    void draw();
+    void init();
+    void draw(glm::mat4 model);
 
 private:
-    void init();
+
     GLint createProgram(string vsPath,string fsPath);
     
     void createVBOAndIBO(string modelName);

@@ -15,17 +15,31 @@
 #include "texture.h"
 
 static GLfloat GL_PI = 3.14159f;
+static GLfloat angle = 0.0f;
+static texture g_texture;
 static void drawPolygons()
 {
-    texture tex;
-    tex.draw();
+    static bool first = 0;
+    if (first == 0 )
+    {
+        g_texture.init();
+    }
+    first++;
+    
+    angle += 0.01f;
+//    angle = -90.0f;
+    glm::mat4 model = glm::mat4(1.0);
+    model = glm::translate(model, glm::vec3(0.0f,-0.0f,-2.0f));
+    model = glm::rotate(model, angle, glm::vec3(0.0f,1.0f,0.0f));
+//    model = glm::rotate(model, 3.0f, glm::vec3(1.0f,0.0f,0.0f));
+    g_texture.draw(model);
     
 //    first3DModelProject program;
 //    program.draw();
     
 //    triangleShader shader;
 //    shader.draw();
-    
+    glutPostRedisplay();
        return;
 //    glColor3f(1.0f, 1.0f, 0.0f);
     // 开启深度测试
@@ -158,11 +172,17 @@ int main(int argc, char * argv[]) {
     
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA);
-    
-    
     createWindows(WINWIDTH,WINHIGH);
     glutReshapeFunc(changeSize);
     glutDisplayFunc(drawPolygons);
+    glutIdleFunc(drawPolygons);
+    
+    
+//  设置正反面
+    glFrontFace(GL_CCW);
+    glCullFace(GL_BACK);
+    glEnable(GL_CULL_FACE);
+    glPolygonMode(GL_BACK, GL_FILL);
     
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);

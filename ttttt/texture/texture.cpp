@@ -30,6 +30,10 @@ void texture::init()
     glEnable(GL_DEPTH_TEST);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+    
+    m_program = createProgram("Shader/texcoord.vs", "Shader/texcoord.fs");
+    createVBOAndIBO("model/Sphere.obj");
+    createTexture("image/earth.bmp");
 }
 
 GLint texture::createProgram(string vsPath, string fsPath)
@@ -62,8 +66,6 @@ GLint texture::createProgram(string vsPath, string fsPath)
     
     glLinkProgram(program);
     
-
-    
     glDetachShader(program,vsShader);
     glDetachShader(program,fsShader);
     
@@ -83,7 +85,7 @@ void texture::createVBOAndIBO(string modelName)
     modelName = getFullPath(modelName);
     m_pModel = new Model;
     m_pModel->load(modelName);
-    m_pModel->print();
+//    m_pModel->print();
     
     m_vbo = 0;
     glGenBuffers(1,&m_vbo);
@@ -148,12 +150,10 @@ void texture::createTexture(string texName)
 }
 
 
-void texture::draw()
+void texture::draw(glm::mat4 model)
 {
-    init();
-    m_program = createProgram("Shader/texcoord.vs", "Shader/texcoord.fs");
-    createVBOAndIBO("model/Cube.obj");
-    createTexture("image/earth.bmp");
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     
     glUseProgram(m_program);
     glBindBuffer(GL_ARRAY_BUFFER,m_vbo);
@@ -182,9 +182,7 @@ void texture::draw()
     glVertexAttribPointer(texcoordL,2,GL_FLOAT,GL_FALSE,sizeof(VertexInfo),(void*)(offsetof(VertexInfo, texCoor)));
     
     
-    glm::mat4 model = glm::mat4(1.0);
-    model = glm::translate(model, glm::vec3(0.0f,0.0f,-1.0f));
-    model = glm::rotate(model, 90.0f, glm::vec3(0.0f,1.0f,0.0f));
+//    model = glm::rotate(model, 90.0f, glm::vec3(0.0f,1.0f,0.0f));
 
     glm::mat4 nm = glm::inverseTranspose(model);
     glUniformMatrix4fv(ML,1,GL_FALSE,glm::value_ptr(model));

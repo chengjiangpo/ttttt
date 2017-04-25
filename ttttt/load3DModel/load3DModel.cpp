@@ -111,8 +111,11 @@ void load3DModel::loadModel(string modelName,vector<VertexInfo>& vertexInfoVec,v
             indexVec.push_back(findIndex);
         }else
         {
+            int posIndex        = indexA.positionIndex  - 1;
+            int texcoorIndex    = indexA.texcoorIndex   - 1;
+            int normalIndex     = indexA.nomalIndex     - 1;
             // 之前没有遇到过相同的点，需要创建新的点
-            vertexInfoVec.push_back(makeVertexInfo(vertexVec.at(indexA.positionIndex-1), makeColor(1.0f, 1.0f, 1.0f, 1.0f), texcoorVec.at(indexA.texcoorIndex-1), normalVec.at(indexA.nomalIndex-1)));
+            vertexInfoVec.push_back(makeVertexInfo(vertexVec.at(posIndex), makeColor(1.0f, 1.0f, 1.0f, 1.0f), texcoorVec.at(texcoorIndex), normalVec.at(normalIndex)));
             int curIndex = (int)vertexInfoVec.size()-1;
             indexVec.push_back(curIndex);
         }
